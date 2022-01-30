@@ -67,11 +67,11 @@ elif status == "OK":
     sunset = datetime.datetime(time.localtime().tm_year, time.localtime().tm_mon, time.localtime(
     ).tm_mday, horas, minutos, segundos)
 
-    print("current: " + str(current_time.time()))
-    print("sunrise: " + str(sunrise.time()))
-    print("noon: " + str(solar_noon.time()))
-    print("sunset: " + str(sunset.time()))
-    print(current_time.time() > solar_noon.time())
+    #print("current: " + str(current_time.time()))
+    #print("sunrise: " + str(sunrise.time()))
+    #print("noon: " + str(solar_noon.time()))
+    #print("sunset: " + str(sunset.time()))
+
 
 else:
     sunrise = "08:00:00"
@@ -80,6 +80,10 @@ else:
 
 
 # Gets the greeting message ready
+# Night => bright blue "[94m
+# Morning => bright yellow "[93m
+# Evening => yellow (~orange) "[33m
+
 greeting_message = "🌞 Buenos días"
 color_code = "\033[1;93m"
 if (current_time.time() > solar_noon.time() and current_time.time() < sunset.time()):
@@ -93,7 +97,3 @@ elif (current_time.time() > sunset.time() or current_time.time() < sunrise.time(
 name = "Dani"
 
 print(color_code + greeting_message + ' ' + "\033[39m" + name + "\n")
-
-# Night => bright blue "[94m
-# Morning => bright yellow "[93m
-# Evening => yellow (~orange) "[33m
