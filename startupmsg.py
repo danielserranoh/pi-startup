@@ -78,11 +78,6 @@ else:
     solar_noon = "12:00:00"
     sunset = "20:00:00"
 
-print("_,-._")
-print("/ \_/ \")
-print(">-(_)-<")
-print("\_/ \_/")
-print(" `-' ")  
 # Gets the greeting message ready
 # Night => bright blue "[94m
 # Morning => bright yellow "[93m
